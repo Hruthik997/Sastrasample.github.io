@@ -1,0 +1,127 @@
+<html>
+<head>
+	<title>Admission News</title>
+<style>
+a{
+	color: red;
+}
+.portal{
+	text-align: center;
+	border: solid 10px blue;
+}
+.warnings{
+	text-align: center;
+}
+.selection{
+	color: blue;
+}
+p{
+	color: black;
+	background-color: lightsteelblue;
+}
+label
+{
+	color: black;
+}
+.name{
+	background-color: white;
+	color: blue;
+}
+.stream{
+	background-color: white;
+}
+.note{
+	background-color: white;
+	color: green;
+}
+.userinputs{
+	text-align: center;
+	border: solid 10px blue;
+}
+table{
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="portal">
+	<br>
+	<a href="https://www.sastra.edu/admissions-2021/3268-applicant-portal.html">CLICK HERE</a> for online application portal of Sastra University
+	<br>
+	<br>
+	<a href="https://www.sastra.edu/sastraadmissions/">CLICK HERE</a> for <i>Information</i> regarding Admissions in Sastra University
+	<br>
+	<br>
+</div>
+<br>
+<div class="warnings">
+	<p><i><b>Quick Validation based on Previous year patterns for Round-I allotment</i></b></p>
+	<p><b>Don't take this Serious! This is Just for Knowing your Position</b></p>
+	<br>
+	<p class="name">Enter Your Good name</p>
+	<input type="text" name="name" id="name" required>
+</div>
+<br>
+<div class="userinputs">
+	<p class="stream"><b>For Validation, Enter below Details</b></p>
+	<p class="note">*** For Stream 2 Validation Enter only XI and XII Standards Percentage ***</p>
+		<table align="center">
+		<tr>
+			<td>JEE Percentage</td>
+			<td><input type="number" id="jees1" name="jees1" required></td>
+	    </tr>
+	    <tr>
+	    	<td>XI and XII Standards Percentage</td>
+	    	<td><input type="number" id="inters1" name="inters1" required></td>
+	    </tr>
+	</table>
+	<br>
+	<input type="button" value="VALIDATE FOR STREAM 1" id="submit1" onclick="calculates1()">
+	<input type="button" value="VALIDATE FOR STREAM 2" id="submit2" onclick="calculates2()">
+	<br>
+	<br>
+</div>
+<br>
+<div id="result"></div>
+<script>
+	function calculates1()
+	{
+		var n=document.getElementById("name").value;
+		var js1=document.getElementById("jees1").value;
+		var is1=document.getElementById("inters1").value;
+		var s1=js1/2;
+		var f1=is1/2;
+		var s=s1+f1;
+		if(s>=90)
+		{
+			document.getElementById("result").innerHTML="Dear "+n+"! There are high chances for selection.";
+		}
+		else if(s>=80 && s<90)
+		{
+			document.getElementById("result").innerHTML="Dear "+n+"! There are fairly higher chances for selection.";
+		}
+		else
+		{
+			document.getElementById("result").innerHTML="Dear "+n+"! There are low chances for selection, But definitely try for next rounds.";
+		}
+	}
+	function calculates2()
+	{
+		var n1=document.getElementById("name").value;
+		var is2=document.getElementById("inters1").value;
+		if(is2>=90)
+		{
+			document.getElementById("result").innerHTML="Dear "+n1+"! There are high chances for selecting.";		
+		}
+		else if(is2>=80 && is2<90)
+		{
+			document.getElementById("result").innerHTML="Dear "+n1+"! There are fairly higher chances for selecting.";
+		}
+		else
+		{
+			document.getElementById("result").innerHTML="Dear "+n1+"! There are low chances for selection, But definitely try for next rounds.";
+		}
+	}
+</script>
+</body>
+</html>
