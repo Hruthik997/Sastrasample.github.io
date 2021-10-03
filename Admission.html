@@ -116,7 +116,11 @@ table{
 		var s1=js1/2;
 		var f1=is1/2;
 		var s=s1+f1;
-		if(s>=90)
+		if(s<0 || s>100)
+		{
+			document.getElementById("result").innerHTML="Dear "+n+"! Please enter a valid percentage.";
+		}
+		else if(s>=90)
 		{
 			document.getElementById("result").innerHTML="Dear "+n+"! There are high chances for selection.";
 		}
@@ -133,7 +137,11 @@ table{
 	{
 		var n1=document.getElementById("name").value;
 		var is2=document.getElementById("inters1").value;
-		if(is2>=90)
+		if(is2<0 || is2>100)
+		{
+			document.getElementById("result").innerHTML="Dear "+n1+"! Please enter a valid percentage.";
+		}
+		else if(is2>=90)
 		{
 			document.getElementById("result").innerHTML="Dear "+n1+"! There are high chances for selection.";		
 		}
